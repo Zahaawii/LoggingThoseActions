@@ -1,0 +1,77 @@
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.time.LocalTime;
+
+public class Main {
+
+	public static void main (String [] args) {
+	
+	
+		
+	}
+
+}
+
+
+class Menu {
+	
+public void menu() {
+	int userInput = userInput();
+if(userInput == 1) {System.out.println("Add line");}
+if(userInput == 2) {System.out.println("View line");}
+if(userInput == 3) {System.out.println("Remove line");}
+}
+
+public int userInput() {return scanner.nextInt();}
+
+}
+
+
+class LoggingThoseActions {
+
+Scanner scanner = new Scanner(System.in);
+new actions action = new Actions();
+private ArrayList <Actions> log = new ArrayList<>();
+
+public ArrayList<actions> addActions(String line) {
+	log.add(line);
+	return log;
+}
+
+public void userLine() {
+	System.out.println("Enter a line");
+	String line = scanner.next();
+	addActions(line);
+}
+
+public void deleteALine() {
+	System.out.println("Enter a number on the line you want to delete");
+	int userDelete = scanner.nextInt();
+	log.remove(userDelete);
+}
+
+public ArrayList<Actions> getLines() {
+	return log;
+}
+
+}
+
+
+class Actions {
+	ArrayList <String> lines = new ArrayList<>();
+	LocalTime time = LocalTime.now();
+	
+	public Actions(ArrayList<String> lines, LocalTime time) {
+		this.lines = lines;
+		this.time = time;
+	}
+	
+	public ArrayList<String> getLines() {
+		return lines;
+	}
+	
+	public LocalTime getTime() {
+		return time;
+	}
+	
+}
